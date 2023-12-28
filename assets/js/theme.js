@@ -83,10 +83,9 @@
 
   if ($("body").hasClass("tt-transition")) {
     // Wait until the whole page is loaded.
-    $(window).on("load", function () {
-      setTimeout(function () {
-        HideLoad(); // call out animations.
-      }, 0);
+    $(window).ready(function () {
+      // Hide the loader as soon as the DOM is ready
+      HideLoad();
     });
 
     // Transitions In (when "ptr-overlay" slides in).
